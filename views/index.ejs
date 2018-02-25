@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="norton-safeweb-site-verification"
+          content="qmnt-qlhwjof7v8ae-gwsq4e49dsst51nevgzfas5ktzhnabqpfe5a4nc2ab-s1488bmr64twcynz2oearsaevoilvm2mq6c5d7rdjx5ppm71k84b5btz4dn6q6ceze-"/>
+    <title><%= title %></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/bundle.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/79e2ba9598.js"></script>
+    <script src="/bundle.min.js"></script>
+</head>
+
+<body>
+
+<header id="headerId" class="container-fluid text-center btn-success" data-toggle="tooltip" data-placement="bottom"
+        title="ページを再読み込みします">
+    <h1><%= title %></h1>
+</header>
+
+<div id="conversationFieldId" class="container-fluid bs-component"></div>
+
+<footer class="container-fluid bg-success text-success" id="footerId">
+    <form id="searchFormId" action="#" style="margin: 10px 0;">
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control lg" id="qId" placeholder="メッセージを入力">
+            <span class="input-group-btn">
+                <button type="button" id="sttId" class="btn btn-success" style="width: 60px">
+                    <span class="fa fa-microphone" id="microphoneIconId" aria-hidden="true"></span>
+                </button>
+                <button type="submit" class="btn btn-success" style="width: 60px">
+                    <span class="fa fa-search" aria-hidden="true"></span>
+                </button>
+            </span>
+        </div>
+        <p class="text-center">IBM関東研 H29-7b アジャイル開発入門</p>
+    </form>
+</footer>
+
+</body>
+</html>

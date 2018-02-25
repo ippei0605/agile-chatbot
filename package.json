@@ -1,0 +1,39 @@
+{
+  "name": "agile-chatbot",
+  "version": "1.0.0",
+  "description": "Agile chatbot",
+  "private": true,
+  "engines": {
+    "node": "~8.9.3"
+  },
+  "scripts": {
+    "build": "gulp; babili public/dist/bundle.js -o public/bundle.min.js",
+    "doc": "jsdoc -c jsdoc-conf.json *.js routes/*.js utils/*.js install/*.js public/dev/*.js",
+    "postinstall": "node install/postinstall.js",
+    "start": "node app.js",
+    "vcap_services": "node node_modules/cfenv-one-liner -p VCAP_SERVICES",
+    "vcap_application": "node node_modules/cfenv-one-liner -p VCAP_APPLICATION"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cfenv": "~1.0.4",
+    "cloudant": "^1.10.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "moment": "^2.19.1",
+    "morgan": "^1.9.0",
+    "request": "^2.81.0",
+    "serve-favicon": "~2.4.3",
+    "vcap_services": "~0.3.4",
+    "watson-nlc-qa": "^1.0.2"
+  },
+  "devDependencies": {
+    "babili": "~0.1.4",
+    "cfenv-one-liner": "0.0.2",
+    "del": "~3.0.0",
+    "gulp": "~3.9.1",
+    "gulp-clean-css": "~3.4.2",
+    "gulp-concat": "~2.6.1",
+    "jsdoc": "^3.5.5"
+  }
+}
