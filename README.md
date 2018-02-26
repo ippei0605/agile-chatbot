@@ -30,14 +30,14 @@
         - 0〜5時: お疲れ様です (サービス時間外ですが、PCの時刻を変更することで確認できます。) 
 
 ## 開発者向け情報
-このアプリはBluemix Cloud Foundry の SDK for Node.js™ で稼動しております。ここからは Bluemix の知識がある開発者向けの情報を示します。
+このアプリは IBM Cloud Cloud Foundry の SDK for Node.js™ で稼動しております。ここからは IBM Cloud の知識がある開発者向けの情報を示します。
 
 ### セットアップ
-このアプリをご自身の Bluemix 環境にセットアップする手順を以下に示します。 Bluemix コンソール (ブラウザー) とターミナルソフトでの Bluemix コマンドの操作が必要になります。
+このアプリをご自身の IBM Cloud 環境にセットアップする手順を以下に示します。 IBM Cloud Dashboard (ブラウザー) とターミナルソフトでの Bluemix コマンドの操作が必要になります。
 
 1. agile-chatbot アプリを PC にダウンロード (Download ZIP) して解凍してください。ディレクトリ名は agile-chatbot-master から agile-chatbot に変更してください。
 
-1. Bluemix コンソールにログインしてください。ここでは以下の条件で説明します。ご自身のアカウント情報に読替えて手順を進めてください。
+1. IBM Cloud Dashboard にログインしてください。ここでは以下の条件で説明します。ご自身のアカウント情報に読替えて手順を進めてください。
     - アカウント: JIEC Co., Ltd.
     - 地域: 米国南部
     - 組織: jiec_rd
@@ -45,28 +45,28 @@
 
       > 後述する Natural Language Classifier Toolkit (beta) は米国南部のみ使用可能のため、制約が無ければ米国南部を選んでください。
 
-1. Bluemix コンソールで Cloud Foundry アプリ「SDK for Node.js™」を作成してください。
+1. IBM Cloud Dashboard で Cloud Foundry アプリ「SDK for Node.js™」を作成してください。
     - アプリケーション名: B20-O970605-agile-chatbot (任意、同じ地域で名前が重複しないように接頭語や接尾語を付けてください。)
         
         > 以降、B20-O970605-agile-chatbot で説明します。
         > なお、作成されるアプリの URL は https://b20-o970605-agile-chatbot.mybluemix.net/ になります。
         > (サブドメイン 英国: eu-gb, シドニー: au-syd, ドイツ: eu-de, 米国南部: なし)
 
-1. PC に Bluemix コマンド・ライン・インターフェースをインストールしていない場合は、インストールしてください。Bluemix コンソール、アプリケーション内の開始 (Getting Started) メニューからダウンロードすることができます。
+1. PC に Bluemix コマンド・ライン・インターフェースをインストールしていない場合は、インストールしてください。IBM Cloud Dashboard、アプリケーション内の開始 (Getting Started) メニューからダウンロードすることができます。
 
-1. Bluemix コンソールで、Cloudant NoSQL DB をサービスを作成し、B20-O970605-agile-chatbot にバインドしてください。
+1. IBM Cloud Dashboard で、Cloudant NoSQL DB をサービスを作成し、B20-O970605-agile-chatbot にバインドしてください。
     - サービス名: 任意  
     - プラン: 任意 (私は「Lite」を選択しました。)  
 
-1. Bluemix コンソールで、Natural Language Classifier サービスを作成し、B20-O970605-agile-chatbot にバインドしてください。
+1. IBM Cloud Dashboard で、Natural Language Classifier サービスを作成し、B20-O970605-agile-chatbot にバインドしてください。
     - サービス名: 任意  
     - プラン: 「標準」
 
-1. Bluemix コンソールで、Speech To Text サービスを作成し、B20-O970605-agile-chatbot にバインドしてください。
+1. IBM Cloud Dashboard で、Speech To Text サービスを作成し、B20-O970605-agile-chatbot にバインドしてください。
     - サービス名: 任意  
     - プラン: 任意 (私はカスタムモデルを作って学習させられる「標準」を選択しました。)
 
-1. Bluemix コンソールで、Text to Speech サービスを作成し、B20-O970605-agile-chatbot にバインドしてください。  
+1. IBM Cloud Dashboard で、Text to Speech サービスを作成し、B20-O970605-agile-chatbot にバインドしてください。  
     - サービス名: 任意 
     - プラン: 任意 (私はカスタムモデルを作って学習させられる「標準」を選択しました。)
 
@@ -92,7 +92,7 @@
         1. データベースにデータ (設計文書、アプリ設定、コンテンツ) を登録します。
         1. Q&A の機械学習を実施します。
             - 15分程で機械学習が完了します。確認方法を以下に示します。
-                1. Bluemix コンソールで、Natural Language Classifier の管理画面から「Natural Language Classifier Toolkit (beta)」をクリックしてください。  
+                1. IBM Cloud Dashboard で、Natural Language Classifier の管理画面から「Natural Language Classifier Toolkit (beta)」をクリックしてください。  
                 ![Toolkit](docs/fig-4.png)
                 1. Sign in with Bluemix をクリックしてください。  
                 ![Sign](docs/btn-1.png)
@@ -203,7 +203,7 @@ agile-chatbot
 
 #### データの変更
 * コンテンツ (質問と回答) を変更する手順を以下に示します。
-  - Bluemix コンソールから、Cloudant NoSQL DB サービスをクリック、Cloudant Dashboard を起動してください。
+  - IBM Cloud Dashboard から、Cloudant NoSQL DB サービスをクリック、Cloudant Dashboard を起動してください。
   - データ登録には以下の2通りの方法がございます。
     1. Cloudant Dashboard で直接データを編集します。
     1. Cloudant Dashboard でデータベースを削除、install/answer.json ファイルを編集して、アプリを再度プッシュします。
@@ -211,7 +211,7 @@ agile-chatbot
 
 #### 機械学習
 * 質問と回答の結び付きを AI に学習させることで応答させることができます。機械学習の手順を以下に示します。
-  - Bluemix コンソールから、Natural Language Classifier サービスをクリック、Natural Language Classifier Toolkit (beta) を起動してください。
+  - IBM Cloud Dashboard から、Natural Language Classifier サービスをクリック、Natural Language Classifier Toolkit (beta) を起動してください。
   - 不要な Classifier があれば削除してください。
   - 機械学習には以下の2通りの方法がございます。
     1. Natural Language Classifier Toolkit (beta) の Training data 画面で学習データをアップロードして、Create Classifier してください。学習データは、"質問","クラス"の2項目からなるCSVファイルです。install/classifier.csv を参考にしてください。
